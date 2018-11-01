@@ -91,7 +91,7 @@ open class _FloatLabelCell<T>: Cell<T>, UITextFieldDelegate, TextFieldCell where
         return NSLayoutConstraint.constraints(withVisualFormat: "H:|-[floatLabeledTextField]-|", options: .alignAllLastBaseline, metrics: metrics, views: views) + NSLayoutConstraint.constraints(withVisualFormat: "V:|-(vMargin)-[floatLabeledTextField]-(vMargin)-|", options: .alignAllLastBaseline, metrics: metrics, views: views)
     }
 
-    open func textFieldDidChange(_ textField: UITextField) {
+    @objc open func textFieldDidChange(_ textField: UITextField) {
         guard let textValue = textField.text else {
             row.value = nil
             return
